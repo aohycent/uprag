@@ -1,0 +1,31 @@
+<!Doctype>
+<html>
+  <head>
+  </head>
+  <body>
+    <script type='text/javascript'>
+    function SubmitForm(){
+        if(document.forms['contactus'].onsubmit())
+        {
+            showResultDiv();
+            document.forms['contactus'].action='mint.php';
+            document.forms['contactus'].target='frame_result1';
+            document.forms['contactus'].submit();
+    
+            document.forms['contactus'].action='t.php';
+            document.forms['contactus'].target='frame_result2';
+            document.forms['contactus'].submit();
+        }
+        return true;
+    }
+    function showResultDiv(){
+        var result_div = document.getElementById('resultcontainer');
+        result_div.style.display="";
+    }
+    function hideResultDiv(){
+        var result_div = document.getElementById('resultcontainer');
+        result_div.style.display='none';
+    }
+    </script>
+  </body>
+</html>
