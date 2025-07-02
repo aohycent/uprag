@@ -4,6 +4,9 @@
   </head>
   <body>
     <script type='text/javascript'>
+	if(getQueryString()["unittests"]){
+		alert(getQueryString()["unittests"]);
+	}
       function getQueryString() {
 			  var result = {}, queryString = location.search.substring(1), re = /([^&=]+)=([^&]*)/g, m;
 			  while (m = re.exec(queryString)) {
