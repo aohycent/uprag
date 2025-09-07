@@ -3,9 +3,19 @@
   <head>
   </head>
   <body>
+	  <a href="?unittests=tried">try unit test</a>
+	  <div id="resultcontainer"></div>
+	  <input name="url" placeholder="enter endpoint" id="postEndpoint"/>
+	  <input name="title" placeholder="title" id="title" />
+	  <button onClick="JavaScript: broadcastGenesis();""></button>
     <script type='text/javascript'>
 	if(getQueryString()["unittests"]){
 		alert(getQueryString()["unittests"]);
+	}
+	function broadcastGenesis(){
+		var ep = document.getElementById("postEndpoint");
+		var tl = document.getElementById("title");
+		genesisBlocksShare(ep.value(),tl.value(),100,100);
 	}
 	function genesisBlocksShare( url, title, w, h ){
 		var left = ( window.innerWidth / 2 )-( w / 2 );
